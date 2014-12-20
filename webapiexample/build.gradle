@@ -1,0 +1,42 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1.1'
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 2
+        versionName '1.1'
+    }
+//    buildTypes {
+//        release {
+//            runProguard false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+//        }
+//    }
+
+    lintOptions {
+        lintConfig file("custom-lint.xml")
+    }
+
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //Important, OkHTTP 2.0 Depends on those....
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.google.code.gson:gson:2.2.+'
+    compile 'com.squareup.retrofit:retrofit:1.6.+'
+    compile 'com.squareup.okhttp:okhttp:2.0.+'
+    compile 'com.jakewharton:butterknife:6.0.0'
+    compile 'com.squareup.okio:okio:1.0.+'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.+'
+    compile files('libs/core-1.51.0.0.jar')
+    compile files('libs/pg-1.51.0.0.jar')
+    compile files('libs/pkix-1.51.0.0.jar')
+    compile files('libs/prov-1.51.0.0.jar')
+}
