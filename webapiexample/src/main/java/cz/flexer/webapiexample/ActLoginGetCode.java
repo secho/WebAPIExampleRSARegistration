@@ -30,6 +30,9 @@ public class ActLoginGetCode extends ActionBarActivity {
         ButterKnife.inject(this);
         mWebLogin = new WebView(this);
         setContentView(mWebLogin);
+        mWebLogin.clearCache(true);
+        mWebLogin.clearHistory();
+        mWebLogin.getSettings().setJavaScriptEnabled(true);
         startLoginScreen();
     }
 
